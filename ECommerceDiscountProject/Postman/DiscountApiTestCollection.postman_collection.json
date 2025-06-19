@@ -1,0 +1,105 @@
+{
+    "info": {
+        "_postman_id": "12345678-90ab-cdef-1234-567890abcdef",
+        "name": "Discount API Testleri",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Başarılı İstek",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"productName\": \"Akıllı Telefon\",\n  \"category\": \"Elektronik\",\n  \"originalPrice\": 5000,\n  \"quantity\": 2,\n  \"customerType\": \"VIP\"\n}"
+                },
+                "url": {
+                    "raw": "https://localhost:5000/api/Product/CalculateDiscount",
+                    "protocol": "http",
+                    "host": [ "localhost" ],
+                    "port": "5000",
+                    "path": [ "api", "Product", "CalculateDiscount" ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Geçersiz Fiyat",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"productName\": \"Çamaşır Makinesi\",\n  \"category\": \"Elektronik\",\n  \"originalPrice\": 0,\n  \"quantity\": 2,\n  \"customerType\": \"Normal\"\n}"
+                },
+                "url": {
+                    "raw": "https://localhost:5000/api/Product/CalculateDiscount",
+                    "protocol": "http",
+                    "host": [ "localhost" ],
+                    "port": "5000",
+                    "path": [ "api", "Product", "CalculateDiscount" ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Geçersiz Adet",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"productName\": \"Pantolon\",\n  \"category\": \"Giyim\",\n  \"originalPrice\": 250,\n  \"quantity\": 150,\n  \"customerType\": \"Normal\"\n}"
+                },
+                "url": {
+                    "raw": "https://localhost:5000/api/Product/CalculateDiscount",
+                    "protocol": "http",
+                    "host": [ "localhost" ],
+                    "port": "5000",
+                    "path": [ "api", "Product", "CalculateDiscount" ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Exception Simülasyonu",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"productName\": \"EXCEPTION\",\n  \"category\": \"Ev & Yaşam\",\n  \"originalPrice\": 1000,\n  \"quantity\": 1,\n  \"customerType\": \"Normal\"\n}"
+                },
+                "url": {
+                    "raw": "https://localhost:5000/api/Product/CalculateDiscount",
+                    "protocol": "http",
+                    "host": [ "localhost" ],
+                    "port": "5000",
+                    "path": [ "api", "Product", "CalculateDiscount" ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
